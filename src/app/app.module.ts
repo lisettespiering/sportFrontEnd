@@ -10,6 +10,7 @@ import { LocatiesComponent } from './locaties/locaties.component';
 import { AccountComponent } from './account/account.component';
 import { OverOnsComponent } from './overOns/overOns.component';
 import { ContactComponent } from './contact/contact.component';
+import { UnknownurlComponent } from './unknownurl/unknownurl.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ContactComponent } from './contact/contact.component';
     LocatiesComponent,
     AccountComponent,
     OverOnsComponent,
-    ContactComponent
+    ContactComponent,
+    UnknownurlComponent
   ],
   imports: [
     BrowserModule,
