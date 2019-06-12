@@ -1,0 +1,20 @@
+<p>
+  Maak hier een nieuw account aan:
+</p>
+
+<form #formulier="ngForm" (ngSubmit)="versturen(formulier)">
+
+  <br>E-mail:<br>
+  <input [(ngModel)]="account.email"
+      name="email" required>
+
+  <br><br>Wachtwoord:<br>
+  <input type="password"  [(ngModel)]="account.wachtwoord"
+      name="wachtwoord" required>
+
+  <br><br>Herhaal het wachtwoord:<br>
+  <input type="password"  [(ngModel)]="auto.wachtwoord2"
+      name="wachtwoord2" required>
+  <br><br><input type="submit" value="Volgende" 
+      [disabled]="formulier.invalid">
+</form>

@@ -1,0 +1,22 @@
+<p>
+    Maak hier een nieuwe locatie aan:
+  </p>
+  
+  <form #formulier="ngForm" (ngSubmit)="versturen(formulier)">
+  
+    <br>Naam:<br>
+    <input [(ngModel)]="locatie.naam"
+        name="naam" required>
+  
+    <br><br>Adres:<br>
+    <input type="adres"  [(ngModel)]="account.adres"
+        name="adres" required>
+  
+    <br><select name="sport">
+      <option value="duiken">Duiken</option>
+      <option value="boulderen">Boulderen</option>
+    </select>
+
+    <br><br><input type="submit" value="Volgende" 
+        [disabled]="formulier.invalid">
+  </form>
