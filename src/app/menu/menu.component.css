@@ -1,0 +1,31 @@
+/*css menu */
+
+
+/* Add a black background color to the top navigation */
+.navigatiemenu {
+    background-color: #1a0ce0;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .navigatiemenu a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .navigatiemenu a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .navigatiemenu a.actief {
+    background-color: rgb(73, 2, 73);
+    color: white;
+  
+  }
