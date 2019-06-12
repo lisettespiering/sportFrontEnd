@@ -11,6 +11,11 @@ import { AccountComponent } from './account/account.component';
 import { OverOnsComponent } from './overOns/overOns.component';
 import { ContactComponent } from './contact/contact.component';
 import { UnknownurlComponent } from './unknownurl/unknownurl.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { AccountcreateComponent } from './accountcreate/accountcreate.component';
+import { AccountloginComponent } from './accountlogin/accountlogin.component';
+import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +26,16 @@ import { UnknownurlComponent } from './unknownurl/unknownurl.component';
     AccountComponent,
     OverOnsComponent,
     ContactComponent,
-    UnknownurlComponent
+    UnknownurlComponent,
+    AccountcreateComponent,
+    AccountloginComponent,
+    LocatiecreateComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
