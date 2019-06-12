@@ -10,20 +10,16 @@ import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component'
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
-  {
-    path: "home", component: HomeComponent
-  },
-  {
-    path: "locaties", component: LocatiesComponent
-  },
-  { path: "new_locatie", component: LocatiecreateComponent },
+  {path: "home", component: HomeComponent},
+  {path: "locaties", component: LocatiesComponent},
+
+  { path: "locaties/nieuwelocatie", component: LocatiecreateComponent },
   { path: "account", component: AccountComponent },
   { path: "overOns", component: OverOnsComponent },
   { path: "contact", component: ContactComponent },
 
   { path: "**", component: UnknownurlComponent },
   
-
 ];
 
 @NgModule({
