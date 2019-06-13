@@ -1,0 +1,33 @@
+<p>
+  Update of verwijder hier een locatie:
+</p>
+
+<form #formulier="ngForm" (ngSubmit)="versturen();">
+
+  <br>Naam:<br>
+  <input [(ngModel)]="locatie.naam"
+      name="naam" required>
+
+  <br><br>Adres:<br>
+  <input type="adres"  [(ngModel)]="locatie.adres"
+      name="adres" required>
+
+  <br><br>Sport:<br>
+  <br><select name="sport">
+    <option value="duiken">Duiken</option>
+    <option value="boulderen">Boulderen</option>
+  </select>
+
+  <br><br><input type="submit" value="Opslaan" 
+      [disabled]="formulier.invalid">
+
+</form>
+
+<form #formulier2="ngForm" (ngSubmit)="verwijderen();">
+
+  <br><br>
+  <input type="checkbox" required> Klik als u zeker weet dat u wil verwijderen.
+
+  <br><br><input type="submit" value="Verwijderen"  >
+
+</form>

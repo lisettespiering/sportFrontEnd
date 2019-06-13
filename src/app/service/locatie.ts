@@ -16,16 +16,16 @@ export class LocatieService {
   constructor(private http: HttpClient) { }
 
   public create(locatie : Locatie): Observable<Locatie> {
-    return this.http.post<Locatie>(`${environment.sportappUrl}/locatie`,
+    return this.http.post<Locatie>(`${environment.sportappUrl}/locatie/createLocatie`,
         locatie, this.httpOptions)
   }
 
   public retrieveAll(): Observable<Locatie[]> {
-    return this.http.get<Locatie[]>(`${environment.sportappUrl}/locatie`);
+    return this.http.get<Locatie[]>(`${environment.sportappUrl}/locatie/getLocatie/`);
   }
 
   public retrieveById(id: number): Observable<Locatie> {
-    return this.http.get<Locatie>(`${environment.sportappUrl}/locatie/${id}`)
+    return this.http.get<Locatie>(`${environment.sportappUrl}/locatie/getLocatie/${id}`)
   }
 
   public update(locatie: Locatie): Observable<Locatie> {
@@ -34,6 +34,6 @@ export class LocatieService {
   }
 
   public delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${environment.sportappUrl}/locatie/${id}`);
+    return this.http.delete<void>(`${environment.sportappUrl}/locatie/deleteLocatie/${id}`);
   }
 }

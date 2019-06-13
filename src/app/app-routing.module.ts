@@ -7,12 +7,15 @@ import { OverOnsComponent } from './overOns/overOns.component';
 import { ContactComponent } from './contact/contact.component';
 import { UnknownurlComponent } from './unknownurl/unknownurl.component';
 import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component';
+import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component';
+
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {path: "home", component: HomeComponent},
   {path: "locaties", component: LocatiesComponent},
 
+  { path: "locaties/updatelocatie/:ids", component: LocatieupdateComponent},
   { path: "locaties/nieuwelocatie", component: LocatiecreateComponent },
   { path: "account", component: AccountComponent },
   { path: "overOns", component: OverOnsComponent },

@@ -1,5 +1,21 @@
 Lijst met locaties:
 
+<table>
+    <tr>
+      <th>Naam</th>
+      <th>Adres</th>
+      <th>Sport</th>     
+    </tr>
+    <tr *ngFor="let locatie of locaties">
+      <td>{{locatie.naam}}</td>
+      <td>{{locatie.adres}}</td>
+      <td>{{locatie.sport.naam}}</td>
+      <td><a [routerLink]="['reviews', locatie.id]">Reviews</a></td>
+      <td><a [routerLink]="['nieuwereview', locatie.id]">Maak Review</a></td>
+      <td><a [routerLink]="['updatelocatie', locatie.id]">Edit</a></td>
+    </tr>
+  </table>
+
 <br>
 
 <a routerLink = "nieuwelocatie">Nieuwe Locatie</a>
