@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { AccountcreateComponent } from './accountcreate/accountcreate.component';
 import { AccountloginComponent } from './accountlogin/accountlogin.component';
 import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component';
+import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component'
     UnknownurlComponent,
     AccountcreateComponent,
     AccountloginComponent,
-    LocatiecreateComponent
+    LocatiecreateComponent,
+    LocatieupdateComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,21 +2,23 @@
     Maak hier een nieuwe locatie aan:
   </p>
   
-  <form #formulier="ngForm" (ngSubmit)="versturen(formulier)">
+  <form #formulier="ngForm" (ngSubmit)="versturen();">
   
     <br>Naam:<br>
     <input [(ngModel)]="locatie.naam"
         name="naam" required>
   
     <br><br>Adres:<br>
-    <input type="adres"  [(ngModel)]="account.adres"
+    <input type="adres"  [(ngModel)]="locatie.adres"
         name="adres" required>
   
-    <br><select name="sport">
+        
+    <br><br>Sport:<br>
+    <br><select name="sport" [(ngModel)] = "sportstring">
       <option value="duiken">Duiken</option>
       <option value="boulderen">Boulderen</option>
     </select>
 
-    <br><br><input type="submit" value="Volgende" 
+    <br><br><input type="submit" value="Opslaan" 
         [disabled]="formulier.invalid">
   </form>
