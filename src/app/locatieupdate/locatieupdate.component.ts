@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Locatie } from '../domain/locatie';
 import { LocatieService } from '../service/locatie';
 import { ActivatedRoute } from '@angular/router';
-
-
+import { SportService } from '../service/sport';
+import { Sport } from '../domain/sport';
 
 @Component({
   selector: 'app-locatieupdate',

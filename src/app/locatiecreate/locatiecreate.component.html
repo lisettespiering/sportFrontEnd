@@ -14,10 +14,13 @@
   
         
     <br><br>Sport:<br>
-    <br><select name="sport" [(ngModel)] = "sportstring">
-      <option value="duiken">Duiken</option>
-      <option value="boulderen">Boulderen</option>
-    </select>
+
+    <br><select name="sport" [(ngModel)] = "locatie.sport.id">
+      <option *ngFor="let s of this.sporten" value={{s.id}}>
+      {{s.naam}}
+      </option>
+      </select>
+
 
     <br><br><input type="submit" value="Opslaan" 
         [disabled]="formulier.invalid">

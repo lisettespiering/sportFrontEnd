@@ -5,7 +5,7 @@ export class Locatie {
     id: number;
     naam: string;
     adres: string;
-    sport: Sport;
+    sport: Sport = new Sport();
 
 }
 

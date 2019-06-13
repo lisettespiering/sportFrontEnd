@@ -13,35 +13,20 @@ export class LocatiecreateComponent implements OnInit {
 
   locatie : Locatie = new Locatie();
   
-  sport : Sport;
-  sportstring : String;
+  sporten : Sport[];
 
   constructor(private locatieService : LocatieService,
             private sportService : SportService) { }
 
   ngOnInit() {
-  }
+    this.sportService.retrieveAll().subscribe(sport  => {
+      this.sporten = sport;
+  })}
 
   versturen() {
 
-    if (this.sportstring == "duiken") {
-      this.sportService.retrieveById(1).subscribe(sport => {
-        //console.log(sport);
-        this.sport = sport
-      })
-    }
-    else if (this.sportstring == "boulderen") {
-      this.sportService.retrieveById(2).subscribe(sport  => {
-        //console.log(sport);
-        this.sport = sport
-      })
-    }
-
-    this.locatie.sport = this.sport;
-
     this.locatieService.create(this.locatie).subscribe(locatie  => {
       console.log(locatie)
-
     })
 
   }
