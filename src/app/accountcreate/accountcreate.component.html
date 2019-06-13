@@ -12,8 +12,11 @@
   <input type="password"  [(ngModel)]="account.wachtwoord"
       name="wachtwoord" required>
 
+      {{account.email}}
+      {{account.wachtwoord}}
+      {{wachtwoordcheck}}
   <br><br>Herhaal het wachtwoord:<br>
-  <input type="password"  [(ngModel)]="auto.wachtwoord2"
+  <input type="password"  [(ngModel)]="wachtwoordcheck"
       name="wachtwoord2" required>
   <br><br><input type="submit" value="Volgende" 
       [disabled]="formulier.invalid">

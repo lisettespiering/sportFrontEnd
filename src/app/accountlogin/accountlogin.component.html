@@ -5,11 +5,11 @@
   <form #formulier="ngForm" (ngSubmit)="versturen(formulier)">
   
     <br>E-mail:<br>
-    <input [(ngModel)]="account.email"
+    <input [(ngModel)]="email"
         name="email" required>
   
     <br><br>Wachtwoord:<br>
-    <input type="password"  [(ngModel)]="account.wachtwoord"
+    <input type="password"  [(ngModel)]="wacthwoord"
         name="wachtwoord" required>
   
     <br><br><input type="submit" value="Login" 

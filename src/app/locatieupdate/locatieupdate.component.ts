@@ -14,14 +14,20 @@ export class LocatieupdateComponent implements OnInit {
 
   locatie : Locatie = new Locatie();
 
+  sporten : Sport[];
+
   public id: number;
 
+
   constructor(private locatieService : LocatieService,
-    private route: ActivatedRoute) { }
+    private route: ActivatedRoute,
+    private sportService : SportService) { }
 
   ngOnInit() {
     this.id = parseInt(  this.route.snapshot.paramMap.get('ids') );
-  }
+    this.sportService.retrieveAll().subscribe(sport  => {
+      this.sporten = sport;
+  })}
 
   verwijderen() {
     this.locatieService.delete(this.id).subscribe(locatie  => {
@@ -30,5 +36,15 @@ export class LocatieupdateComponent implements OnInit {
     })
 
   
+  }
+
+versturen() {
+  this.locatie.id = this.id;
+  console.log(this.locatie)
+  this.locatieService.update(this.locatie).subscribe(locatie  => {
+    console.log(locatie)
+  })
+
 }
+
 }
