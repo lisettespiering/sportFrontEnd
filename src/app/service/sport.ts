@@ -21,7 +21,7 @@ export class SportService {
   }
 
   public retrieveAll(): Observable<Sport[]> {
-    return this.http.get<Sport[]>(`${environment.sportappUrl}/sport`);
+    return this.http.get<Sport[]>(`${environment.sportappUrl}/sport/getSport`);
   }
 
   public retrieveById(id: number): Observable<Sport> {
