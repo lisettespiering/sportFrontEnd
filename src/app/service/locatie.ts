@@ -29,7 +29,7 @@ export class LocatieService {
   }
 
   public update(locatie: Locatie): Observable<Locatie> {
-    return this.http.put<Locatie>(`${environment.sportappUrl}/locatie/${locatie.id}`,
+    return this.http.put<Locatie>(`${environment.sportappUrl}/locatie/updateLocatie/${locatie.id}`,
         locatie, this.httpOptions)
   }
 
