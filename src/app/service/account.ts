@@ -34,6 +34,6 @@ export class AccountService {
   }
 
   public delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${environment.sportappUrl}/account/${id}`);
+    return this.http.delete<void>(`${environment.sportappUrl}/account/DeleteAccount/${id}`);
   }
 }

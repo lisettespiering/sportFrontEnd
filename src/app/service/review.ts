@@ -37,4 +37,8 @@ export class ReviewService {
   public delete(id: number): Observable<void> {
     return this.http.delete<void>(`${environment.sportappUrl}/review/${id}`);
   }
+  public retrieveByUser(id : number): Observable<Review[]> {
+    return this.http.get<Review[]>(`${environment.sportappUrl}/review/getReviewByUser/${id}`);
+  }
+
 }

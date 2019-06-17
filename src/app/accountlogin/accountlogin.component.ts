@@ -21,13 +21,16 @@ export class AccountloginComponent implements OnInit {
     ngOnInit() {
     }
 
+  foutmelding : String;
+
   versturen() {
     this.loginservice.loginUser(this.account.email, this.account.wachtwoord).subscribe(
       account  => { 
         this.loginservice.activeaccount = account; 
         console.log(account);
        },
-      error => console.log(error.message),
+      error => {console.log(error.message);
+        this.foutmelding = "Het emailadres is niet bekend of het wacthwoord is verkeed."},
       () => this.router.navigate(['home'] )
     )
   }

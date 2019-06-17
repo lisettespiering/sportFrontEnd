@@ -17,6 +17,10 @@ import { AccountcreateComponent } from './accountcreate/accountcreate.component'
 import { AccountloginComponent } from './accountlogin/accountlogin.component';
 import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component';
 import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component';
+import { AccountreviewComponent } from './accountreview/accountreview.component';
+import { AccountupdateComponent } from './accountupdate/accountupdate.component';
+
+
 
 @NgModule({
   declarations: [
@@ -32,6 +36,9 @@ import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component'
     AccountloginComponent,
     LocatiecreateComponent,
     LocatieupdateComponent,
+    AccountreviewComponent,
+    AccountupdateComponent
+    
   ],
   imports: [
     BrowserModule,

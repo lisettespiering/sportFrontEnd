@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../service/login.service';
+import { Router } from '@angular/router';
+import { AccountService } from '../service/account';
+import { ReviewService } from '../service/review';
+import { Review } from '../domain/review';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-accountreview',
@@ -7,9 +13,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccountreviewComponent implements OnInit {
 
-  constructor() { }
+
+  reviews: Review[];
+  constructor(private loginservice : LoginService,
+    private router : Router,
+    private accountService : AccountService,
+    private reviewService : ReviewService) { }
 
   ngOnInit() {
+    if(this.loginservice.activeaccount == null) {
+      this.router.navigate(['account']);
+    }
+
+    this.reviewService.retrieveByUser(this.loginservice.activeaccount.id).subscribe(
+      (reviews : Review[]) => this.reviews = reviews,
+      (error: HttpErrorResponse) => 
+        alert("Er is een fout opgetreden: " +
+        error.error.error.status + " " + error.error.error + "\n" +
+        "\nMessage:\n" + error.error.message 
+         ),
+      () =>{}
+    )
+
+  }
+
+
+
+
+  DELETE() {
+    this.accountService.delete(this.loginservice.activeaccount.id).subscribe(locatie  => {
+      console.log(locatie)
+    this.loginservice.activeaccount = null;
+    this.router.navigate(['account']);
+  })}
+
+  Logout() {
+    this.loginservice.activeaccount = null;
+    this.router.navigate(['account']);
   }
 
 }

@@ -12,6 +12,8 @@
   <input type="password"  [(ngModel)]="account.wachtwoord"
       name="wachtwoord" required>
 
+<br><p style="color:red;">{{foutmelding}}</p>
+
   <br><br><input type="submit" value="Login" 
       [disabled]="formulier.invalid">
 </form>

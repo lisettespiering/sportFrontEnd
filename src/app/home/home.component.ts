@@ -13,9 +13,13 @@ export class HomeComponent implements OnInit {
   constructor(private loginservice: LoginService,
     private router: Router) { }
 
+    naam : String;
+
   ngOnInit() {
-    if (this.loginservice.activeaccount==null) {
-      this.router.navigate(['account']);
+    if (this.loginservice.activeaccount!=null) {
+       this.naam = this.loginservice.activeaccount.naam;
+    } else {
+      this.naam = "gast"
     }
   }
 
