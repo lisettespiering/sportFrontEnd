@@ -16,7 +16,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   public create(account: Account): Observable<Account> {
-    return this.http.post<Account>(`${environment.sportappUrl}/account`,
+    return this.http.post<Account>(`${environment.sportappUrl}/account/createAccount`,
         account, this.httpOptions)
   }
 

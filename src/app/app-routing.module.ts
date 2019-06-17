@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { UnknownurlComponent } from './unknownurl/unknownurl.component';
 import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component';
 import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component';
+import { AccountcreateComponent } from './accountcreate/accountcreate.component';
 
 
 const routes: Routes = [
@@ -18,8 +19,10 @@ const routes: Routes = [
   { path: "locaties/updatelocatie/:ids", component: LocatieupdateComponent},
   { path: "locaties/nieuwelocatie", component: LocatiecreateComponent },
   { path: "account", component: AccountComponent },
+  { path: "account/newaccount", component: AccountcreateComponent },
   { path: "overOns", component: OverOnsComponent },
   { path: "contact", component: ContactComponent },
+
 
   { path: "**", component: UnknownurlComponent },
   
