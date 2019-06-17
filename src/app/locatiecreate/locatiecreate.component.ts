@@ -3,6 +3,7 @@ import { Locatie } from '../domain/locatie';
 import { LocatieService } from '../service/locatie';
 import { SportService } from '../service/sport';
 import { Sport } from '../domain/sport';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-locatiecreate',
@@ -16,7 +17,8 @@ export class LocatiecreateComponent implements OnInit {
   sporten : Sport[];
 
   constructor(private locatieService : LocatieService,
-            private sportService : SportService) { }
+            private sportService : SportService,
+            private router : Router) { }
 
   ngOnInit() {
     this.sportService.retrieveAll().subscribe(sport  => {
@@ -25,9 +27,13 @@ export class LocatiecreateComponent implements OnInit {
 
   versturen() {
 
-    this.locatieService.create(this.locatie).subscribe(locatie  => {
-      console.log(locatie)
-    })
+    this.locatieService.create(this.locatie).subscribe(
+        locatie  => { console.log(locatie) },
+        error => console.log(error.message),
+        () => this.router.navigate(['locaties'] )
+               )
+
+
 
   }
 
