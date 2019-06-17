@@ -6,6 +6,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { SportService } from '../service/sport';
 import { Sport } from '../domain/sport';
 
+//import * as shajs from 'sha.js'
+
 @Component({
   selector: 'app-accountcreate',
   templateUrl: './accountcreate.component.html',
@@ -31,11 +33,19 @@ export class AccountcreateComponent implements OnInit {
   versturen() {
 
     if(this.wachtwoordcheck == this.account.wachtwoord) {
+      //this.account.wachtwoord = shajs('sha256').update(this.account.wachtwoord).digest('hex');
     this.accountService.create(this.account).subscribe(
         account  => { console.log(account) },
-        error => console.log(error.message),
+        error =>  {//this.wwerror = error.message,//console.log(error.message),
+          if (error.message = "Http failure response for http://localhost:8080//account/createAccount: 409 OK") {
+            this.wwerror = "Dit e-mail adres bestaat al in onze database."
+        }//} else {
+          //  this.router.navigate(['account'] )
+          //}
+        },
         () => this.router.navigate(['account'] )
-               )
+
+    )
   }
     else {
       this.wwerror = "De wachtwoorden komen niet overeen."
