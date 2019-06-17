@@ -11,12 +11,16 @@ import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component'
 import { AccountcreateComponent } from './accountcreate/accountcreate.component';
 import { AccountreviewComponent } from './accountreview/accountreview.component';
 import { AccountupdateComponent } from './accountupdate/accountupdate.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
 
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {path: "home", component: HomeComponent},
   {path: "locaties", component: LocatiesComponent},
+  { path: "locaties/reviews/:ids", component: ReviewsComponent},
+  { path: "locaties/reviewcreate/ :ids", component: ReviewcreateComponent},
 
   { path: "locaties/updatelocatie/:ids", component: LocatieupdateComponent},
   { path: "locaties/nieuwelocatie", component: LocatiecreateComponent },

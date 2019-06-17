@@ -21,6 +21,9 @@ import { AccountreviewComponent } from './accountreview/accountreview.component'
 import { AccountupdateComponent } from './accountupdate/accountupdate.component';
 
 
+import { RatingCreateComponent } from './rating-create/rating-create.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +40,11 @@ import { AccountupdateComponent } from './accountupdate/accountupdate.component'
     LocatiecreateComponent,
     LocatieupdateComponent,
     AccountreviewComponent,
-    AccountupdateComponent
+    AccountupdateComponent,
     
+    RatingCreateComponent,
+    ReviewsComponent,
+    ReviewcreateComponent,
   ],
   imports: [
     BrowserModule,

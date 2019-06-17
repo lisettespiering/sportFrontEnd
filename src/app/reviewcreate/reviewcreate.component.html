@@ -1,0 +1,31 @@
+<p>
+  reviewcreate works!
+</p>
+
+<p>
+    Maak hier een nieuwe review aan:
+  </p>
+  
+  <form #formulier="ngForm" (ngSubmit)="versturen();">
+  
+    <br>titel:<br>
+    <input [(ngModel)]="review.naam"
+        name="naam" required>
+  
+    <br><br>inhoud:<br>
+    <input [(ngModel)]="review.inhoud"
+        name="inhoud" required>
+  
+        
+        <br><br>rating:<br>
+        <input type="string[]" [(ngModel)]="review.rating"
+            name="rating" required>
+
+            <br><br>bijzonderheden:<br>
+            <input type="string[]"  [(ngModel)]="review.bijzonderheden"
+                name="bijzonderheden" required>
+
+
+    <br><br><input type="submit" value="Opslaan" 
+        [disabled]="formulier.invalid">
+  </form>

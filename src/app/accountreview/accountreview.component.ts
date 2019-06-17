@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../service/login.service';
 import { Router } from '@angular/router';
-import { AccountService } from '../service/account';
-import { ReviewService } from '../service/review';
+
 import { Review } from '../domain/review';
 import { HttpErrorResponse } from '@angular/common/http';
+import { AccountService } from '../service/accountService';
+import { ReviewService } from '../service/reviewService';
 
 @Component({
   selector: 'app-accountreview',
