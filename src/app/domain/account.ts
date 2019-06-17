@@ -6,7 +6,7 @@ export class Account {
         id: number
         naam: string
         wachtwoord: string
-        sport: Sport
+        sport: Sport = new Sport()
         favorietePlekken: string[]
         woonplaats: string
         aanmaakdatum: number
