@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Locatie } from '../domain/locatie';
-import { LocatieService } from '../service/locatie';
+import { LocatieService } from '../service/locatieService';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
