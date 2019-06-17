@@ -18,6 +18,8 @@ import { AccountloginComponent } from './accountlogin/accountlogin.component';
 import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component';
 import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component';
 import { RatingCreateComponent } from './rating-create/rating-create.component';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { RatingCreateComponent } from './rating-create/rating-create.component';
     LocatiecreateComponent,
     LocatieupdateComponent,
     RatingCreateComponent,
+    ReviewsComponent,
+    ReviewcreateComponent,
   ],
   imports: [
     BrowserModule,

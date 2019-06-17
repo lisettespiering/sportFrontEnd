@@ -1,4 +1,5 @@
-import { Sport } from './sport';
+import { SportService } from './sportService';
+import { Sport } from '../domain/sport';
 
 describe('Sport', () => {
   it('should create an instance', () => {

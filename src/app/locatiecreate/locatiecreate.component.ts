@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Locatie } from '../domain/locatie';
-import { LocatieService } from '../service/locatie';
-import { SportService } from '../service/sport';
+import { LocatieService } from '../service/locatieService';
+import { SportService } from '../service/sportService';
 import { Sport } from '../domain/sport';
 
 @Component({
