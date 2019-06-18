@@ -17,6 +17,10 @@ import { AccountcreateComponent } from './accountcreate/accountcreate.component'
 import { AccountloginComponent } from './accountlogin/accountlogin.component';
 import { LocatiecreateComponent } from './locatiecreate/locatiecreate.component';
 import { LocatieupdateComponent } from './locatieupdate/locatieupdate.component';
+import { AccountreviewComponent } from './accountreview/accountreview.component';
+import { AccountupdateComponent } from './accountupdate/accountupdate.component';
+
+
 import { RatingCreateComponent } from './rating-create/rating-create.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
@@ -35,6 +39,9 @@ import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
     AccountloginComponent,
     LocatiecreateComponent,
     LocatieupdateComponent,
+    AccountreviewComponent,
+    AccountupdateComponent,
+    
     RatingCreateComponent,
     ReviewsComponent,
     ReviewcreateComponent,

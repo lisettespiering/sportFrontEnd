@@ -8,16 +8,36 @@
   <input [(ngModel)]="account.email"
       name="email" required>
 
+      <br><br>Gebruikersnaam:<br>
+    <input [(ngModel)]="account.naam"
+      name="Gebruikersnaam" required>
+
   <br><br>Wachtwoord:<br>
   <input type="password"  [(ngModel)]="account.wachtwoord"
       name="wachtwoord" required>
 
-      {{account.email}}
-      {{account.wachtwoord}}
-      {{wachtwoordcheck}}
   <br><br>Herhaal het wachtwoord:<br>
   <input type="password"  [(ngModel)]="wachtwoordcheck"
       name="wachtwoord2" required>
+
+      <br><br>Woonplaats:<br>
+      <input [(ngModel)]="account.woonplaats"
+      name="Woonplaats" required>
+
+      <br><p style="color:red;">{{wwerror}}</p>
+
+      <br><br>Sport:<br>
+
+      <br><select name="sport" [(ngModel)] = "account.sport.id">
+        <option *ngFor="let s of this.sporten" value={{s.id}}>
+        {{s.naam}}
+        </option>
+        </select>
+  
+
+
   <br><br><input type="submit" value="Volgende" 
       [disabled]="formulier.invalid">
 </form>
+
+<router-outlet></router-outlet>

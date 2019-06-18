@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginService } from '../service/login.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginservice: LoginService,
+    private router: Router) { }
+
+    naam : String;
 
   ngOnInit() {
+    if (this.loginservice.activeaccount!=null) {
+       this.naam = this.loginservice.activeaccount.naam;
+    } else {
+      this.naam = "gast"
+    }
   }
 
 }
