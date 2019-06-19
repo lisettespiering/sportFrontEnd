@@ -3,7 +3,7 @@ import { AccountService } from '../service/accountService';
 import { Account } from '../domain/account'
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-accountlogin',
@@ -12,26 +12,27 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class AccountloginComponent implements OnInit {
 
+  account : Account = new Account();
+
   constructor(private route: ActivatedRoute,
-    private accountService: AccountService,
+    private loginservice: LoginService,
     private router: Router) { }
 
-    email : String;
-    wachtwoord : String;
-    account : Account;
-
     ngOnInit() {
-      this.route.params.subscribe(
-        data =>
-          this.accountService.retrieveById(data.id).subscribe(
-            (account: Account) => this.account = account,
-            (fout: HttpErrorResponse) =>
-              alert("Er is een fout opgetreden: " +
-                fout.error.error.status + " " + fout.error.error + "\n" +
-                "\nMessage:\n" + fout.error.message
-              )
-          )
-      )    
     }
+
+  foutmelding : String;
+
+  versturen() {
+    this.loginservice.loginUser(this.account.email, this.account.wachtwoord).subscribe(
+      account  => { 
+        this.loginservice.activeaccount = account; 
+        console.log(account);
+       },
+      error => {console.log(error.message);
+        this.foutmelding = "Het emailadres is niet bekend of het wacthwoord is verkeed."},
+      () => this.router.navigate(['home'] )
+    )
+  }
 
 }

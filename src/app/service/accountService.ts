@@ -16,7 +16,7 @@ export class AccountService {
   constructor(private http: HttpClient) { }
 
   public create(account: Account): Observable<Account> {
-    return this.http.post<Account>(`${environment.sportappUrl}/account`,
+    return this.http.post<Account>(`${environment.sportappUrl}/account/createAccount`,
         account, this.httpOptions)
   }
 
@@ -34,6 +34,6 @@ export class AccountService {
   }
 
   public delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${environment.sportappUrl}/account/${id}`);
+    return this.http.delete<void>(`${environment.sportappUrl}/account/DeleteAccount/${id}`);
   }
 }
