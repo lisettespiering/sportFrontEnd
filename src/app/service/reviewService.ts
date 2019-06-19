@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Account } from '../domain/account';
 import { Review } from '../domain/review';
+import { LocatieService } from '../service/locatieService';
+import { Locatie } from '../domain/locatie';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +16,8 @@ export class ReviewService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private locatieService: LocatieService) { }
 
   public create(review: Review): Observable<Review> {
     return this.http.post<Review>(`${environment.sportappUrl}/review`,
@@ -28,6 +31,14 @@ export class ReviewService {
   public retrieveById(id: number): Observable<Review> {
     return this.http.get<Review>(`${environment.sportappUrl}/review/${id}`)
   }
+
+  public selectByLocationId(id: number): Observable<Review[]> {
+
+    console.log("In Service");
+    console.log(`${environment.sportappUrl}review/${id}`);
+    return this.http.get<Review[]>(`${environment.sportappUrl}review/getReviewsIds/${id}`)
+  }
+ 
 
   public update(review: Review): Observable<Review> {
     return this.http.put<Review>(`${environment.sportappUrl}/review/${review.id}`,

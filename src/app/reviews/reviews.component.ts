@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Review } from '../domain/review';
-import { ReviewService } from '../service/reviewService';
+
 import { HttpErrorResponse } from '@angular/common/http';
-import { LocatieService } from '../service/locatieService';
+import { ReviewService } from '../service/reviewService';
 import { ActivatedRoute } from '@angular/router';
+import { Locatie } from '../domain/locatie';
+
+
 
 @Component({
   selector: 'app-reviews',
@@ -13,32 +16,40 @@ import { ActivatedRoute } from '@angular/router';
 export class ReviewsComponent implements OnInit {
 
   reviews: Review[];
-  // constructor(private reviewservice: ReviewService) { }
+  locatie: Locatie;
+  public id: number;
 
-  // ngOnInit() {
-  //   this.reviewservice.retrieveAll().subscribe(
-  //     (reviews: Review[]) => this.reviews = reviews,
-  //     (error: HttpErrorResponse) => 
-  //       alert("Er is een fout opgetreden: " +
-  //       error.error.error.status + " " + error.error.error + "\n" +
-  //       "\nMessage:\n" + error.error.message 
-  //        ),
-  //     () =>{}
-  //   )
+  constructor(private route: ActivatedRoute,
+    private reviewService: ReviewService) { }
 
-    constructor(private reviewService : ReviewService,
-      private route: ActivatedRoute,
-      private locatieService : LocatieService
-      ) { }
-  
-    public id: number;
-  
-  
-    ngOnInit() {
-      // this.id = parseInt(  this.route.snapshot.paramMap.get('ids') );
-      // this.reviewService.retrieveById().subscribe()}
-  
+
+  ngOnInit() {
+    this.route.params.subscribe(
+      (data: any) => {
+        console.log(data.ids);
+        this.getAllReviews(data.ids);
+      },
+      (error: any) => console.log(error),
+      () => console.log("Gereed")
+    );
+
+
+    //   this.id = parseInt(  this.route.snapshot.paramMap.get('ids') );
+    //   this.reviewService.selectByLocationId(this.id).subscribe(rev  => {
+    //   // this.reviewService.retrieveById(this.id).subscribe(rev  => {
+    //     // this.locatie = rev
+    //     console.log(rev)
+    // }   )  
   }
-  
+  getAllReviews(ids: any) {
+    this.reviewService.selectByLocationId(ids).subscribe(
+      (data: Review[])  => console.log(this.reviews = data),
+      fout => console.log(fout),
+      () => console.log("Gereed")
+    )
+  }
 }
+
+
+
 

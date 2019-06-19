@@ -1,23 +1,26 @@
-Lijst met reviews voor <td>{{locatie.naam}}</td>:
+Lijst met reviews:
 
 <table>
     <!-- <a routerLink = "reviewCreate">Nieuwe Locatie</a> -->
     <tr>
       <th>Naam</th>
+      <th>Gebruiker</th>
       <th>Adres</th>
       <th>inhoud</th>     
     </tr>
     <tr *ngFor="let review of reviews">
-      <td>{{review.naam}}</td>
-      <td>{{review.sport.naam}}</td>
+      <td>{{review.locatie.naam}}</td>
+      <td>{{review.account.naam}}</td>
+      <td>{{review.titel }}</td>
       <td>{{review.inhoud}}</td>
-      <!-- <td><a [routerLink]="rating" [routerLinkActive]="['actief']">Rating</a></td> -->
- 
       
+      <!-- <a routerLink = "reviewCreate">Nieuwe Locatie</a>  -->
     </tr>
+      
+
   </table>
 
-<br>
+
 
 
 <router-outlet></router-outlet>

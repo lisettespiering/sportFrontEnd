@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "locaties", component: LocatiesComponent},
   { path: "locaties/reviews/:ids", component: ReviewsComponent},
-  { path: "locaties/reviewcreate/ :ids", component: ReviewcreateComponent},
+  { path: "locaties/reviewcreate/:ids", component: ReviewcreateComponent},
 
   { path: "locaties/updatelocatie/:ids", component: LocatieupdateComponent},
   { path: "locaties/nieuwelocatie", component: LocatiecreateComponent },
