@@ -27,7 +27,8 @@ export class AccountreviewComponent implements OnInit {
     }
 
     this.reviewService.retrieveByUser(this.loginservice.activeaccount.id).subscribe(
-      (reviews : Review[]) => this.reviews = reviews,
+      (reviews : Review[]) => {this.reviews = reviews
+      console.log(reviews)},
       (error: HttpErrorResponse) => 
         alert("Er is een fout opgetreden: " +
         error.error.error.status + " " + error.error.error + "\n" +
