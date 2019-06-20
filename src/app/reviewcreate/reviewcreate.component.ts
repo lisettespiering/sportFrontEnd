@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Review } from '../domain/review';
 import { ReviewService } from '../service/reviewService';
 import { LocatieService } from '../service/locatieService';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Rating } from '../domain/rating';
 import { RatingService } from '../service/ratingService';
 import { LoginService } from '../service/loginService'; 
@@ -32,7 +32,8 @@ export class ReviewcreateComponent implements OnInit {
 
   constructor(private reviewService : ReviewService,
               private loginService : LoginService,
-              private ratingService : RatingService) { 
+              private ratingService : RatingService,
+              private router: Router) { 
                 // let rate1 = new Rating()
                 // this.ratereview = {
                   // rate: ['totaal','moeilijkheid','locatie','personeel','sfeer','variatie','bereikbaarheid']
@@ -40,6 +41,9 @@ export class ReviewcreateComponent implements OnInit {
               
             
   ngOnInit(){
+    if (this.loginService.activeaccount == null) {
+      this.router.navigate(['account'] )
+    }
     // this.review.account = this.loginService.activeaccount;
   }
 

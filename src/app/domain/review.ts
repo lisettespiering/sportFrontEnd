@@ -1,4 +1,5 @@
 import { Rating } from './rating';
+import { Account } from './account';
 
 export class Review {
 

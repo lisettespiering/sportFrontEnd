@@ -29,7 +29,7 @@ export class ReviewService {
   }
 
   public retrieveById(id: number): Observable<Review> {
-    return this.http.get<Review>(`${environment.sportappUrl}review/${id}`)
+    return this.http.get<Review>(`${environment.sportappUrl}review/getReview/${id}`)
   }
 
   public selectByLocationId(id: number): Observable<Review[]> {
