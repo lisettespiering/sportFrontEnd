@@ -36,4 +36,8 @@ export class LocatieService {
   public delete(id: number): Observable<void> {
     return this.http.delete<void>(`${environment.sportappUrl}/locatie/deleteLocatie/${id}`);
   }
+  public searchquerry(str : String): Observable<Locatie[]> {
+    return this.http.get<Locatie[]>(`${environment.sportappUrl}/locatie/searchLocatie/${str}`)
+  }
+
 }

@@ -1,4 +1,17 @@
-Lijst met locaties:
+<br>
+Geef de naam van een locatie of stad om te zoeken:
+
+<form #formulier="ngForm" (ngSubmit)="versturen()">
+
+  <br>
+  <input [(ngModel)]="zoekterm"
+      name="zoekterm" required>
+
+  <br><br><input type="submit" value="Zoeken" >
+</form>
+<br>
+
+<h1>Lijst met locaties:</h1>
 
 <table>
     <tr>

@@ -27,6 +27,7 @@ export class ReviewcreateComponent implements OnInit {
 
   // ratereview: any;
   // rates: Rating[] = [];
+
   review: Review = new Review();
   rating: Rating = new Rating()
   bijzonderheden: string;
@@ -43,8 +44,10 @@ export class ReviewcreateComponent implements OnInit {
     // rate: ['totaal','moeilijkheid','locatie','personeel','sfeer','variatie','bereikbaarheid']
   }
 
-
   ngOnInit() {
+    if (this.loginService.activeaccount == null) {
+      this.router.navigate(['account'] )
+    }
       this.route.params.subscribe(
       (data: any) => { console.log(data); this.locatieId  = data.ids; },
       (error: any) => console.log(error),

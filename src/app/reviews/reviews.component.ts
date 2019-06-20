@@ -6,6 +6,7 @@ import { ReviewService } from '../service/reviewService';
 import { ActivatedRoute } from '@angular/router';
 import { Locatie } from '../domain/locatie';
 import { Account } from '../domain/account';
+import { LoginService } from '../service/loginService';
 
 
 
@@ -21,7 +22,8 @@ export class ReviewsComponent implements OnInit {
   public id: number;
 
   constructor(private route: ActivatedRoute,
-    private reviewService: ReviewService) { }
+    private reviewService: ReviewService,
+    private loginService: LoginService) { }
 
 
   ngOnInit() {
@@ -33,7 +35,6 @@ export class ReviewsComponent implements OnInit {
       (error: any) => console.log(error),
       () => console.log("Gereed")
     );
-
 
     //   this.id = parseInt(  this.route.snapshot.paramMap.get('ids') );
     //   this.reviewService.selectByLocationId(this.id).subscribe(rev  => {

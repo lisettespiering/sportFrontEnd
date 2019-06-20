@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Locatie } from '../domain/locatie';
 import { LocatieService } from '../service/locatieService';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-locaties',
@@ -10,8 +11,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 })
 export class LocatiesComponent implements OnInit {
 
+  zoekterm : String;
   locaties: Locatie[];
-  constructor(private locatieservice: LocatieService) { }
+  constructor(private locatieservice: LocatieService,
+              private router : Router) { }
 
   ngOnInit() {
     this.locatieservice.retrieveAll().subscribe(
@@ -23,6 +26,10 @@ export class LocatiesComponent implements OnInit {
          ),
       () =>{}
     )
+  }
+
+  versturen() {
+    this.router.navigate(['locaties/searchq/' + this.zoekterm] )
   }
 
 }

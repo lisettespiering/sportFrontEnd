@@ -5,8 +5,6 @@ import { AccountService } from '../service/accountService';
 import { Sport } from '../domain/sport';
 import { SportService } from '../service/sportService';
 
-//import * as shajs from 'sha.js'
-
 @Component({
   selector: 'app-accountcreate',
   templateUrl: './accountcreate.component.html',
@@ -32,7 +30,6 @@ export class AccountcreateComponent implements OnInit {
   versturen() {
 
     if(this.wachtwoordcheck == this.account.wachtwoord) {
-      //this.account.wachtwoord = shajs('sha256').update(this.account.wachtwoord).digest('hex');
     this.accountService.create(this.account).subscribe(
         account  => { console.log(account) },
         error =>  {//this.wwerror = error.message,//console.log(error.message),
