@@ -13,6 +13,7 @@ import { AccountreviewComponent } from './accountreview/accountreview.component'
 import { AccountupdateComponent } from './accountupdate/accountupdate.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
 
   { path: "locaties/updatelocatie/:ids", component: LocatieupdateComponent},
   { path: "locaties/nieuwelocatie", component: LocatiecreateComponent },
+  { path: "locaties/search=q=:term", component: SearchComponent },
   { path: "account", component: AccountComponent },
   { path: "account/newaccount", component: AccountcreateComponent },
   { path: "account/youraccount", component: AccountreviewComponent },

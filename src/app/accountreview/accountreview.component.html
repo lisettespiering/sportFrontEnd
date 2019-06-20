@@ -12,3 +12,22 @@
 <form #formulier2="ngForm" (ngSubmit)="Logout()">
   <br><br><input type="submit" value="Uitloggen" >
 </form>
+
+<br>
+Uw reviews:
+<table>
+  <tr>
+    <th>Titel</th>
+    <th>Locatie</th>
+    <th>Inhoud</th>     
+  </tr>
+  <tr *ngFor="let review of reviews">
+    <td>{{review.titel}}</td>
+    <td>{{review.locatie.naam}}</td>
+    <td>{{review.inhoud}}</td>
+    <!-- <td><a [routerLink]="reviews" [routerLinkActive]="['actief']">Reviews</a></td> -->
+    <!--<td><a [routerLink]="['reviews', locatie.id]" [routerLinkActive]="['actief']">Reviews</a></td>
+    <td><a [routerLink]="['reviewCreate', locatie.id]">Maak Review</a></td>
+    <td><a [routerLink]="['updatelocatie', locatie.id]">Edit</a></td>-->
+  </tr>
+</table>
