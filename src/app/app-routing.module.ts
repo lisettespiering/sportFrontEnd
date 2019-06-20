@@ -14,6 +14,8 @@ import { AccountupdateComponent } from './accountupdate/accountupdate.component'
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
 import { SearchComponent } from './search/search.component';
+import { RatingCreateComponent } from './rating-create/rating-create.component';
+
 
 
 const routes: Routes = [
@@ -21,7 +23,7 @@ const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "locaties", component: LocatiesComponent},
   { path: "locaties/reviews/:ids", component: ReviewsComponent},
-  { path: "locaties/reviewcreate/ :ids", component: ReviewcreateComponent},
+  { path: "locaties/reviewcreate/:ids", component: ReviewcreateComponent},
 
   { path: "locaties/updatelocatie/:ids", component: LocatieupdateComponent},
   { path: "locaties/nieuwelocatie", component: LocatiecreateComponent },

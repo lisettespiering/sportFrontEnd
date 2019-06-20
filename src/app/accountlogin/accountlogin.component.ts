@@ -3,7 +3,7 @@ import { AccountService } from '../service/accountService';
 import { Account } from '../domain/account'
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpErrorResponse } from '@angular/common/http';
-import { LoginService } from '../service/login.service';
+import { LoginService } from '../service/loginService';
 
 @Component({
   selector: 'app-accountlogin',
