@@ -25,6 +25,9 @@ import { RatingCreateComponent } from './rating-create/rating-create.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewcreateComponent } from './reviewcreate/reviewcreate.component';
 import { SearchComponent } from './search/search.component';
+import { ReviewupdateComponent } from './reviewupdate/reviewupdate.component';
+import { ReviewdeleteComponent } from './reviewdelete/reviewdelete.component';
+import { ReviewerrorComponent } from './reviewerror/reviewerror.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { SearchComponent } from './search/search.component';
     ReviewsComponent,
     ReviewcreateComponent,
     SearchComponent,
+    ReviewupdateComponent,
+    ReviewdeleteComponent,
+    ReviewerrorComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,9 @@ Lijst met reviews:
       <td>{{review.account.naam}}</td>
       <td>{{review.titel }}</td>
       <td>{{review.inhoud}}</td>
+      <td><a [routerLink]="['../reviewupdate', review.id]">Edit</a></td>
+      <td><a [routerLink]="['../reviewdelete', review.id]">Delete</a></td>
+
       
       <!-- <a routerLink = "reviewCreate">Nieuwe Locatie</a>  -->
     </tr>

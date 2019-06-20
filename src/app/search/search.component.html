@@ -1,3 +1,37 @@
-<p>
-  seach works!
-</p>
+<br>
+Geef de naam van een locatie of stad om te zoeken:
+
+<form #formulier="ngForm" (ngSubmit)="versturen()">
+
+  <br>
+  <input [(ngModel)]="zoekterm"
+      name="zoekterm" required>
+
+  <br><br><input type="submit" value="Zoeken" >
+</form>
+<br>
+
+<h1>Lijst met locaties:</h1>
+
+<table>
+    <tr>
+      <th>Naam</th>
+      <th>Adres</th>
+      <th>Sport</th>     
+    </tr>
+    <tr *ngFor="let locatie of locaties">
+      <td>{{locatie.naam}}</td>
+      <td>{{locatie.adres}}</td>
+      <td>{{locatie.sport.naam}}</td>
+      <!-- <td><a [routerLink]="reviews" [routerLinkActive]="['actief']">Reviews</a></td> -->
+      <td><a [routerLink]="['reviews', locatie.id]" [routerLinkActive]="['actief']">Reviews</a></td>
+      <td><a [routerLink]="['reviewcreate', locatie.id]" [routerLinkActive]="['actief']">Maak Review</a></td>
+      <td><a [routerLink]="['updatelocatie', locatie.id]">Edit</a></td>
+    </tr>
+  </table>
+
+<br>
+
+<a routerLink = "nieuwelocatie">Nieuwe Locatie</a>
+
+<router-outlet></router-outlet>
