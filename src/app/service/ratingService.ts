@@ -16,16 +16,16 @@ export class RatingService {
   constructor(private http: HttpClient) { }
 
   public create(rating: Rating): Observable<Rating> {
-    return this.http.post<Rating>(`${environment.sportappUrl}/rating`,
+    return this.http.post<Rating>(`${environment.sportappUrl}rating/createRating`,
         rating, this.httpOptions)
   }
 
   public retrieveAll(): Observable<Rating[]> {
-    return this.http.get<Rating[]>(`${environment.sportappUrl}/rating`);
+    return this.http.get<Rating[]>(`${environment.sportappUrl}rating`);
   }
 
   public retrieveById(id: number): Observable<Rating> {
-    return this.http.get<Rating>(`${environment.sportappUrl}/rating/${id}`)
+    return this.http.get<Rating>(`${environment.sportappUrl}rating/${id}`)
   }
 
   public update(rating: Rating): Observable<Rating> {
