@@ -12,7 +12,7 @@ Lijst met locaties:
       <td>{{locatie.sport.naam}}</td>
       <!-- <td><a [routerLink]="reviews" [routerLinkActive]="['actief']">Reviews</a></td> -->
       <td><a [routerLink]="['reviews', locatie.id]" [routerLinkActive]="['actief']">Reviews</a></td>
-      <td><a [routerLink]="['reviewCreate', locatie.id]">Maak Review</a></td>
+      <td><a [routerLink]="['reviewcreate', locatie.id]" [routerLinkActive]="['actief']">Maak Review</a></td>
       <td><a [routerLink]="['updatelocatie', locatie.id]">Edit</a></td>
     </tr>
   </table>

@@ -32,9 +32,6 @@ export class LocatiecreateComponent implements OnInit {
         error => console.log(error.message),
         () => this.router.navigate(['locaties'] )
                )
-
-
-
   }
 
 }
