@@ -1,6 +1,4 @@
-<p>
-  reviewcreate works!
-</p>
+
 
 <p>
     Maak hier een nieuwe review aan:
@@ -15,11 +13,29 @@
     <br><br>inhoud:<br>
     <input [(ngModel)]="review.inhoud"
         name="inhoud" required>
-  
+
         
         <br><br>rating:<br>
-        <input type="string[]" [(ngModel)]="review.rating"
-            name="rating" required>
+        
+        <!-- <p *ngFor="let item of ratereview.rate">{{item}} -->
+            <div class="rate">
+                <input type="radio" id="star5" [(ngModel)]="review.rating" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" [(ngModel)]="review.rating" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" [(ngModel)]="review.rating" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" [(ngModel)]="review.rating" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" [(ngModel)]="review.rating" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+              
+              </div>
+        <!-- </p> -->
+            
+
+
+
 
             <br><br>bijzonderheden:<br>
             <input type="string[]"  [(ngModel)]="review.bijzonderheden"
@@ -28,6 +44,21 @@
 
     <br><br><input type="submit" value="Opslaan" 
         [disabled]="formulier.invalid">
+
+        <div>
+          <br>
+            Review titel:
+            {{review.naam}}<br>
+            Review inhoud:
+            {{review.inhoud}}<br>
+            Review rating:
+            {{review.rating}}<br>
+            Review bijzonderheden:
+            {{review.bijzonderheden}}
+        </div>
   </form>
+
+  
+        
 
   <router-outlet></router-outlet>

@@ -20,16 +20,16 @@ export class ReviewService {
     private locatieService: LocatieService) { }
 
   public create(review: Review): Observable<Review> {
-    return this.http.post<Review>(`${environment.sportappUrl}/review`,
+    return this.http.post<Review>(`${environment.sportappUrl}review/createReview`,
         review, this.httpOptions)
   }
 
   public retrieveAll(): Observable<Review[]> {
-    return this.http.get<Review[]>(`${environment.sportappUrl}/review`);
+    return this.http.get<Review[]>(`${environment.sportappUrl}review`);
   }
 
   public retrieveById(id: number): Observable<Review> {
-    return this.http.get<Review>(`${environment.sportappUrl}/review/${id}`)
+    return this.http.get<Review>(`${environment.sportappUrl}review/${id}`)
   }
 
   public selectByLocationId(id: number): Observable<Review[]> {
@@ -41,15 +41,15 @@ export class ReviewService {
  
 
   public update(review: Review): Observable<Review> {
-    return this.http.put<Review>(`${environment.sportappUrl}/review/${review.id}`,
+    return this.http.put<Review>(`${environment.sportappUrl}review/${review.id}`,
         review, this.httpOptions)
   }
 
   public delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${environment.sportappUrl}/review/${id}`);
+    return this.http.delete<void>(`${environment.sportappUrl}review/${id}`);
   }
   public retrieveByUser(id : number): Observable<Review[]> {
-    return this.http.get<Review[]>(`${environment.sportappUrl}/review/getReviewByUser/${id}`);
+    return this.http.get<Review[]>(`${environment.sportappUrl}review/getReviewByUser/${id}`);
   }
 
 }

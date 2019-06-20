@@ -17,6 +17,7 @@
 
     <br><select name="sport" [(ngModel)] = "locatie.sport.id">
       <option *ngFor="let s of this.sporten" value={{s.id}}>
+          <!-- <option *ngFor="let s of locatie.sport" value={{s.id}}> -->
       {{s.naam}}
       </option>
       </select>

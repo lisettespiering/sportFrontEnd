@@ -5,8 +5,17 @@ import { LocatieService } from '../service/locatieService';
 import { ActivatedRoute } from '@angular/router';
 import { Rating } from '../domain/rating';
 import { RatingService } from '../service/ratingService';
+import { LoginService } from '../service/loginService'; 
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RatingCreateComponent } from '../rating-create/rating-create.component'
 
 
+@NgModule({
+  imports: [BrowserModule],
+  declarations: [ReviewcreateComponent,RatingCreateComponent],
+  bootstrap: [ReviewcreateComponent]
+})
 
 @Component({
   selector: 'app-reviewcreate',
@@ -15,22 +24,29 @@ import { RatingService } from '../service/ratingService';
 })
 export class ReviewcreateComponent implements OnInit {
 
+  // ratereview: any;
+  // rates: Rating[] = [];
   review : Review = new Review();
-  rating : Rating = new Rating()
+  // rating : Rating = new Rating()
 
 
   constructor(private reviewService : ReviewService,
               private loginService : LoginService,
-              private ratingService : RatingService) { }
-
+              private ratingService : RatingService) { 
+                // let rate1 = new Rating()
+                // this.ratereview = {
+                  // rate: ['totaal','moeilijkheid','locatie','personeel','sfeer','variatie','bereikbaarheid']
+                }
+              
+            
   ngOnInit(){
-    this.review.account = this.loginService.account
+    // this.review.account = this.loginService.activeaccount;
   }
 
   versturen() {
-    this.ratingService.create(this.rating).subscribe(rating => console.log(rating))
-    this.reviewService.create(this.review).subscribe(review  => {
-      console.log(review)
-    })
+    // this.ratingService.create(this.rating).subscribe(rating => console.log(rating))
+    this.reviewService.create(this.review).subscribe(review  => console.log(review))
 
   }
+  
+}
