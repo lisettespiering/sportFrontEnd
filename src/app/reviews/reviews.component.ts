@@ -33,7 +33,7 @@ export class ReviewsComponent implements OnInit {
         this.getAllReviews(data.ids);
       },
       (error: any) => console.log(error),
-      () => console.log("Gereed")
+      () => console.log("Gereed ngonit")
     );
 
     //   this.id = parseInt(  this.route.snapshot.paramMap.get('ids') );
@@ -47,7 +47,7 @@ export class ReviewsComponent implements OnInit {
     this.reviewService.selectByLocationId(ids).subscribe(
       (data: Review[])  => console.log(this.reviews = data),
       fout => console.log(fout),
-      () => console.log("Gereed")
+      () => console.log("Gereed get all reviews")
     )
   }
 }

@@ -1,4 +1,10 @@
+<html>
 
+    <script src="js/addons/rating.js"></script>
+
+<head>
+  <meta charset="UTF-8">
+</head>
 
 <p>
     Maak hier een nieuwe review aan:
@@ -14,109 +20,56 @@
     <input [(ngModel)]="review.inhoud"
         name="inhoud" required>
 
+
+        <br><br>rating totaal:<br>
+
+        <button type = "button" class="ster" (click)="click01()"> {{ster01}}</button>
+        <button type = "button" class="ster" (click)="click02()"> {{ster02}}</button>
+        <button type = "button" class="ster" (click)="click03()"> {{ster03}}</button>
+        <button type = "button" class="ster" (click)="click04()"> {{ster04}}</button>
+        <button type = "button" class="ster" (click)="click05()"> {{ster05}}</button>
         
-        <br>rating totaal:
-        <!-- <p *ngFor="let item of ratereview.rate">{{item}} -->
-       <div class="rateTotaal">
-          <input type="radio" id="star5" [(ngModel)]="rating.totaal" name="rate" value="5" />
-          <label for="star5" title="text">5 stars</label>
-          <input type="radio" id="star4" [(ngModel)]="rating.totaal" name="rate" value="4" />
-          <label for="star4" title="text">4 stars</label>
-          <input type="radio" id="star3" [(ngModel)]="rating.totaal" name="rate" value="3" />
-          <label for="star3" title="text">3 stars</label>
-          <input type="radio" id="star2" [(ngModel)]="rating.totaal" name="rate" value="2" />
-          <label for="star2" title="text">2 stars</label>
-          <input type="radio" id="star1" [(ngModel)]="rating.totaal" name="rate" value="1" />
-          <label for="star1" title="text">1 star</label>
-        </div>
-        <!-- </p> -->
+        <br>rating moeilijkheid:<br>
+        <button type = "button" class="ster" (click)="click11()"> {{ster11}}</button>
+        <button type = "button" class="ster" (click)="click12()"> {{ster12}}</button>
+        <button type = "button" class="ster" (click)="click13()"> {{ster13}}</button>
+        <button type = "button" class="ster" (click)="click14()"> {{ster14}}</button>
+        <button type = "button" class="ster" (click)="click15()"> {{ster15}}</button>
         
-        <br>rating moeilijkheid:
-        <div class="rate2">
-          <input type="radio" id="star5" [(ngModel)]="rating.moeilijkheid" name="ratemoeilijkheid" value="5" />
-          <label for="star5_2" title="moeilijkheidRate">5 stars</label>
-          <input type="radio" id="star4" [(ngModel)]="rating.moeilijkheid" name="ratemoeilijkheid" value="4" />
-          <label for="star4_2" title="moeilijkheidRate">4 stars</label>
-          <input type="radio" id="star3" [(ngModel)]="rating.moeilijkheid" name="ratemoeilijkheid" value="3" />
-          <label for="star3_2" title="moeilijkheidRate">3 stars</label>
-          <input type="radio" id="star2" [(ngModel)]="rating.moeilijkheid" name="ratemoeilijkheid" value="2" />
-          <label for="star2_2" title="moeilijkheidRate">2 stars</label>
-          <input type="radio" id="star1" [(ngModel)]="rating.moeilijkheid" name="ratemoeilijkheid" value="1" />
-          <label for="star1_2" title="moeilijkheidRate">1 star</label>
-        </div>
+        <br>rating locatie:<br>
+        <button type = "button" class="ster" (click)="click21()"> {{ster21}}</button>
+        <button type = "button" class="ster" (click)="click22()"> {{ster22}}</button>
+        <button type = "button" class="ster" (click)="click23()"> {{ster23}}</button>
+        <button type = "button" class="ster" (click)="click24()"> {{ster24}}</button>
+        <button type = "button" class="ster" (click)="click25()"> {{ster25}}</button>
 
-        <br>rating locatie:
-        <div class="ratelocatie">
-          <input type="radio" id="star5" [(ngModel)]="rating.locatie" name="ratelocatie" value="5" />
-          <label for="star5" title="LocatieRate">5 stars</label>
-          <input type="radio" id="star4" [(ngModel)]="rating.locatie" name="ratelocatie" value="4" />
-          <label for="star4" title="LocatieRate">4 stars</label>
-          <input type="radio" id="star3" [(ngModel)]="rating.locatie" name="ratelocatie" value="3" />
-          <label for="star3" title="LocatieRate">3 stars</label>
-          <input type="radio" id="star2" [(ngModel)]="rating.locatie" name="ratelocatie" value="2" />
-          <label for="star2" title="LocatieRate">2 stars</label>
-          <input type="radio" id="star1" [(ngModel)]="rating.locatie" name="ratelocatie" value="1" />
-          <label for="star1" title="LocatieRate">1 star</label>
-        </div>
+        <br>rating personeel:<br>
+        <button type = "button" class="ster" (click)="click31()"> {{ster31}}</button>
+        <button type = "button" class="ster" (click)="click32()"> {{ster32}}</button>
+        <button type = "button" class="ster" (click)="click33()"> {{ster33}}</button>
+        <button type = "button" class="ster" (click)="click34()"> {{ster34}}</button>
+        <button type = "button" class="ster" (click)="click35()"> {{ster35}}</button>
 
-        <br>rating personeel:
-        <div class="ratepersoneel">
-          <input type="radio" id="star5" [(ngModel)]="rating.personeel" name="ratepersoneel" value="5" />
-          <label for="star5" title="personeelRate">5 stars</label>
-          <input type="radio" id="star4" [(ngModel)]="rating.personeel" name="ratepersoneel" value="4" />
-          <label for="star4" title="personeelRate">4 stars</label>
-          <input type="radio" id="star3" [(ngModel)]="rating.personeel" name="ratepersoneel" value="3" />
-          <label for="star3" title="personeelRate">3 stars</label>
-          <input type="radio" id="star2" [(ngModel)]="rating.personeel" name="ratepersoneel" value="2" />
-          <label for="star2" title="personeelRate">2 stars</label>
-          <input type="radio" id="star1" [(ngModel)]="rating.personeel" name="ratepersoneel" value="1" />
-          <label for="star1" title="personeelRate">1 star</label>
-        </div>
-
-        <br>rating sfeer:
-        <div class="ratesfeer">
-          <input type="radio" id="star5" [(ngModel)]="rating.sfeer" name="ratesfeer" value="5" />
-          <label for="star5" title="sfeerRate">5 stars</label>
-          <input type="radio" id="star4" [(ngModel)]="rating.sfeer" name="ratesfeer" value="4" />
-          <label for="star4" title="sfeerRate">4 stars</label>
-          <input type="radio" id="star3" [(ngModel)]="rating.sfeer" name="ratesfeer" value="3" />
-          <label for="star3" title="sfeerRate">3 stars</label>
-          <input type="radio" id="star2" [(ngModel)]="rating.sfeer" name="ratesfeer" value="2" />
-          <label for="star2" title="sfeerRate">2 stars</label>
-          <input type="radio" id="star1" [(ngModel)]="rating.sfeer" name="ratesfeer" value="1" />
-          <label for="star1" title="sfeerRate">1 star</label>
-        </div>
+        <br>rating sfeer:<br>
+        <button type = "button" class="ster" (click)="click41()"> {{ster41}}</button>
+        <button type = "button" class="ster" (click)="click42()"> {{ster42}}</button>
+        <button type = "button" class="ster" (click)="click43()"> {{ster43}}</button>
+        <button type = "button" class="ster" (click)="click44()"> {{ster44}}</button>
+        <button type = "button" class="ster" (click)="click45()"> {{ster45}}</button>
         
-        <br>rating variatie:
-        <div class="ratevariatie">
-          <input type="radio" id="star5" [(ngModel)]="rating.variatie" name="ratevariatie" value="5" />
-          <label for="star5" title="variatieRate">5 stars</label>
-          <input type="radio" id="star4" [(ngModel)]="rating.variatie" name="ratevariatie" value="4" />
-          <label for="star4" title="variatieRate">4 stars</label>
-          <input type="radio" id="star3" [(ngModel)]="rating.variatie" name="ratevariatie" value="3" />
-          <label for="star3" title="variatieRate">3 stars</label>
-          <input type="radio" id="star2" [(ngModel)]="rating.variatie" name="ratevariatie" value="2" />
-          <label for="star2" title="variatieRate">2 stars</label>
-          <input type="radio" id="star1" [(ngModel)]="rating.variatie" name="ratevariatie" value="1" />
-          <label for="star1" title="variatieRate">1 star</label>
-        </div>
+        <br>rating variatie:<br>
+        <button type = "button" class="ster" (click)="click51()"> {{ster51}}</button>
+        <button type = "button" class="ster" (click)="click52()"> {{ster52}}</button>
+        <button type = "button" class="ster" (click)="click53()"> {{ster53}}</button>
+        <button type = "button" class="ster" (click)="click54()"> {{ster54}}</button>
+        <button type = "button" class="ster" (click)="click55()"> {{ster55}}</button>
 
-        <br>rating bereikbaarheid:
-        <div class="ratebereikbaarheid">
-          <input type="radio" id="star5" [(ngModel)]="rating.bereikbaarheid" name="ratebereikbaarheid" value="5" />
-          <label for="star5" title="bereikbaarheidRate">5 stars</label>
-          <input type="radio" id="star4" [(ngModel)]="rating.bereikbaarheid" name="ratebereikbaarheid" value="4" />
-          <label for="star4" title="bereikbaarheidRate">4 stars</label>
-          <input type="radio" id="star3" [(ngModel)]="rating.bereikbaarheid" name="ratebereikbaarheid" value="3" />
-          <label for="star3" title="bereikbaarheidRate">3 stars</label>
-          <input type="radio" id="star2" [(ngModel)]="rating.bereikbaarheid" name="ratebereikbaarheid" value="2" />
-          <label for="star2" title="bereikbaarheidRate">2 stars</label>
-          <input type="radio" id="star1" [(ngModel)]="rating.bereikbaarheid" name="ratebereikbaarheid" value="1" />
-          <label for="star1" title="bereikbaarheidRate">1 star</label>
-        </div>
-
-
-
+        <br>rating bereikbaarheid:<br>
+        <button type = "button" class="ster" (click)="click61()"> {{ster61}}</button>
+        <button type = "button" class="ster" (click)="click62()"> {{ster62}}</button>
+        <button type = "button" class="ster" (click)="click63()"> {{ster63}}</button>
+        <button type = "button" class="ster" (click)="click64()"> {{ster64}}</button>
+        <button type = "button" class="ster" (click)="click65()"> {{ster65}}</button>
 
             <br><br>bijzonderheden:<br>
             <input type="text"  [(ngModel)]="bijzonderheden"
@@ -147,3 +100,5 @@
         
 
   <router-outlet></router-outlet>
+
+  </html>
