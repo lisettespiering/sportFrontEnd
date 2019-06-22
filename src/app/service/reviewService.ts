@@ -41,12 +41,12 @@ export class ReviewService {
  
 
   public update(review: Review): Observable<Review> {
-    return this.http.put<Review>(`${environment.sportappUrl}review/${review.id}`,
+    return this.http.put<Review>(`${environment.sportappUrl}review/updateReview/${review.id}`,
         review, this.httpOptions)
   }
 
   public delete(id: number): Observable<void> {
-    return this.http.delete<void>(`${environment.sportappUrl}review/${id}`);
+    return this.http.delete<void>(`${environment.sportappUrl}review/DeleteReview/${id}`);
   }
   public retrieveByUser(id : number): Observable<Review[]> {
     return this.http.get<Review[]>(`${environment.sportappUrl}review/getReviewByUser/${id}`);

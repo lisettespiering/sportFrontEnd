@@ -1,3 +1,102 @@
+<html>
+
+ <head>
+  <meta charset="UTF-8">
+</head>
+
 <p>
-  reviewupdate works!
-</p>
+    Update uw review:
+  </p>
+  
+  <form #formulier="ngForm" (ngSubmit)="versturen();">
+  
+    <br>titel:<br>
+    <input [(ngModel)]="review.titel"
+        name="titel" required>
+  
+    <br><br>inhoud:<br>
+    <input [(ngModel)]="review.inhoud"
+        name="inhoud" required>
+
+
+        <br><br>rating totaal:<br>
+
+        <button type = "button" class="ster" (click)="click01()"> {{ster01}}</button>
+        <button type = "button" class="ster" (click)="click02()"> {{ster02}}</button>
+        <button type = "button" class="ster" (click)="click03()"> {{ster03}}</button>
+        <button type = "button" class="ster" (click)="click04()"> {{ster04}}</button>
+        <button type = "button" class="ster" (click)="click05()"> {{ster05}}</button>
+        
+        <br>rating moeilijkheid:<br>
+        <button type = "button" class="ster" (click)="click11()"> {{ster11}}</button>
+        <button type = "button" class="ster" (click)="click12()"> {{ster12}}</button>
+        <button type = "button" class="ster" (click)="click13()"> {{ster13}}</button>
+        <button type = "button" class="ster" (click)="click14()"> {{ster14}}</button>
+        <button type = "button" class="ster" (click)="click15()"> {{ster15}}</button>
+        
+        <br>rating locatie:<br>
+        <button type = "button" class="ster" (click)="click21()"> {{ster21}}</button>
+        <button type = "button" class="ster" (click)="click22()"> {{ster22}}</button>
+        <button type = "button" class="ster" (click)="click23()"> {{ster23}}</button>
+        <button type = "button" class="ster" (click)="click24()"> {{ster24}}</button>
+        <button type = "button" class="ster" (click)="click25()"> {{ster25}}</button>
+
+        <br>rating personeel:<br>
+        <button type = "button" class="ster" (click)="click31()"> {{ster31}}</button>
+        <button type = "button" class="ster" (click)="click32()"> {{ster32}}</button>
+        <button type = "button" class="ster" (click)="click33()"> {{ster33}}</button>
+        <button type = "button" class="ster" (click)="click34()"> {{ster34}}</button>
+        <button type = "button" class="ster" (click)="click35()"> {{ster35}}</button>
+
+        <br>rating sfeer:<br>
+        <button type = "button" class="ster" (click)="click41()"> {{ster41}}</button>
+        <button type = "button" class="ster" (click)="click42()"> {{ster42}}</button>
+        <button type = "button" class="ster" (click)="click43()"> {{ster43}}</button>
+        <button type = "button" class="ster" (click)="click44()"> {{ster44}}</button>
+        <button type = "button" class="ster" (click)="click45()"> {{ster45}}</button>
+        
+        <br>rating variatie:<br>
+        <button type = "button" class="ster" (click)="click51()"> {{ster51}}</button>
+        <button type = "button" class="ster" (click)="click52()"> {{ster52}}</button>
+        <button type = "button" class="ster" (click)="click53()"> {{ster53}}</button>
+        <button type = "button" class="ster" (click)="click54()"> {{ster54}}</button>
+        <button type = "button" class="ster" (click)="click55()"> {{ster55}}</button>
+
+        <br>rating bereikbaarheid:<br>
+        <button type = "button" class="ster" (click)="click61()"> {{ster61}}</button>
+        <button type = "button" class="ster" (click)="click62()"> {{ster62}}</button>
+        <button type = "button" class="ster" (click)="click63()"> {{ster63}}</button>
+        <button type = "button" class="ster" (click)="click64()"> {{ster64}}</button>
+        <button type = "button" class="ster" (click)="click65()"> {{ster65}}</button>
+
+            <br><br>bijzonderheden:<br>
+            <input type="text"  [(ngModel)]="bijzonderheden"
+                name="bijzonderheden" required>
+
+
+    <br><br><input type="submit" value="Opslaan" 
+        [disabled]="formulier.invalid">
+
+        <div>
+          <br>
+            Review titel:
+            {{review.naam}}<br>
+            Review inhoud:
+            {{review.inhoud}}<br>
+            Review bijzonderheden:
+            {{review.bijzonderheden}}<br>
+            Review rating totaal:
+            {{rating.totaal}}<br>
+            Review rating moeilijkheid:
+            {{rating.moeilijkheid}}<br>
+            Review rating locatie:
+            {{rating.locatie}}
+        </div>
+  </form>
+
+  
+        
+
+  <router-outlet></router-outlet>
+
+  </html>
