@@ -16,7 +16,7 @@ export class RatingService {
   constructor(private http: HttpClient) { }
 
   public create(rating: Rating): Observable<Rating> {
-    return this.http.post<Rating>(`${environment.sportappUrl}rating/createRating`,
+    return this.http.post<Rating>(`${environment.sportappUrl}/rating/createRating`,
         rating, this.httpOptions)
   }
 

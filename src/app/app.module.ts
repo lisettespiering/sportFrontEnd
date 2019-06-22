@@ -28,6 +28,7 @@ import { SearchComponent } from './search/search.component';
 import { ReviewupdateComponent } from './reviewupdate/reviewupdate.component';
 import { ReviewdeleteComponent } from './reviewdelete/reviewdelete.component';
 import { ReviewerrorComponent } from './reviewerror/reviewerror.component';
+import { TeststarsComponent } from './teststars/teststars.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { ReviewerrorComponent } from './reviewerror/reviewerror.component';
     ReviewupdateComponent,
     ReviewdeleteComponent,
     ReviewerrorComponent,
+    TeststarsComponent,
   ],
   imports: [
     BrowserModule,

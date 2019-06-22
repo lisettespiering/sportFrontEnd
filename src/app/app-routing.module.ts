@@ -18,6 +18,7 @@ import { RatingCreateComponent } from './rating-create/rating-create.component';
 import { ReviewupdateComponent } from './reviewupdate/reviewupdate.component';
 import { ReviewdeleteComponent } from './reviewdelete/reviewdelete.component';
 import { ReviewerrorComponent } from './reviewerror/reviewerror.component';
+import { TeststarsComponent } from './teststars/teststars.component';
 
 
 
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {path: "home", component: HomeComponent},
   {path: "locaties", component: LocatiesComponent},
+  { path: "test" , component: TeststarsComponent},
   { path: "locaties/reviewcreate/:ids", component: ReviewcreateComponent},
   { path: "locaties/reviews/reviewupdate/:ids", component: ReviewupdateComponent},
   { path: "locaties/reviews/reviewdelete/:ids", component: ReviewdeleteComponent},
