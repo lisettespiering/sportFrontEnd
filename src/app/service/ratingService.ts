@@ -29,7 +29,7 @@ export class RatingService {
   }
 
   public update(rating: Rating): Observable<Rating> {
-    return this.http.put<Rating>(`${environment.sportappUrl}/rating/${rating.id}`,
+    return this.http.put<Rating>(`${environment.sportappUrl}/rating/updateRating/${rating.id}`,
         rating, this.httpOptions)
   }
 

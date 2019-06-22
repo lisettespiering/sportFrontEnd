@@ -1,0 +1,11 @@
+button.ster {
+    color:gold;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    font-size: 48px;
+    outline: none;
+    padding: 2px;
+    cursor: pointer;
+}
