@@ -25,15 +25,19 @@ export class AccountService {
   }
 
   public retrieveById(id: number): Observable<Account> {
-    return this.http.get<Account>(`${environment.sportappUrl}/account/${id}`)
+    return this.http.get<Account>(`${environment.sportappUrl}/account/getAccount/${id}`)
   }
 
   public update(account: Account): Observable<Account> {
-    return this.http.put<Account>(`${environment.sportappUrl}/account/${account.id}`,
+    return this.http.put<Account>(`${environment.sportappUrl}/account/updateAccount/${account.id}`,
         account, this.httpOptions)
   }
 
   public delete(id: number): Observable<void> {
     return this.http.delete<void>(`${environment.sportappUrl}/account/DeleteAccount/${id}`);
+  }
+
+  public checkWW(account : Account) : Observable<Account> {
+    return this.http.put<Account>(`${environment.sportappUrl}/account/checkWW`,account, this.httpOptions);
   }
 }
