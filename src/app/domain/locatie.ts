@@ -6,6 +6,7 @@ export class Locatie {
     naam: string;
     adres: string;
     sport: Sport = new Sport();
+    rating : number;
 
 }
 
