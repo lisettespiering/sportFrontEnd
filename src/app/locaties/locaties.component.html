@@ -1,6 +1,8 @@
 <head>
     <meta charset="UTF-8">
 </head>
+<br>
+<a routerLink = "nieuwelocatie">Nieuwe Locatie</a>
 
 <br>
 Geef de naam van een locatie of stad om te zoeken:
@@ -21,12 +23,14 @@ Geef de naam van een locatie of stad om te zoeken:
     <tr>
       <th>Naam</th>
       <th>Adres</th>
-      <th>Sport</th>     
+      <th>Sport</th>
+      <th>Gemiddelde Rating</th>     
     </tr>
     <tr *ngFor="let locatie of locaties">
       <td>{{locatie.naam}}</td>
       <td>{{locatie.adres}}</td>
       <td>{{locatie.sport.naam}}</td>
+      <td>{{locatie.rating}}</td>
       <!-- <td><a [routerLink]="reviews" [routerLinkActive]="['actief']">Reviews</a></td> -->
       <td><a [routerLink]="['reviews', locatie.id]" [routerLinkActive]="['actief']">Reviews</a></td>
       <td><a [routerLink]="['reviewcreate', locatie.id]" [routerLinkActive]="['actief']">Maak Review</a></td>
@@ -36,6 +40,6 @@ Geef de naam van een locatie of stad om te zoeken:
 
 <br>
 
-<a routerLink = "nieuwelocatie">Nieuwe Locatie</a>
+
 
 <router-outlet></router-outlet>
