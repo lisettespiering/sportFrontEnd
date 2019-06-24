@@ -25,9 +25,7 @@ Uw reviews:
     <td>{{review.titel}}</td>
     <td>{{review.locatie.naam}}</td>
     <td>{{review.inhoud}}</td>
-    <!-- <td><a [routerLink]="reviews" [routerLinkActive]="['actief']">Reviews</a></td> -->
-    <!--<td><a [routerLink]="['reviews', locatie.id]" [routerLinkActive]="['actief']">Reviews</a></td>
-    <td><a [routerLink]="['reviewCreate', locatie.id]">Maak Review</a></td>
-    <td><a [routerLink]="['updatelocatie', locatie.id]">Edit</a></td>-->
+    <td><a [routerLink]="['../../locaties/reviews/reviewupdate', review.id]">Edit</a></td>
+    <td><a [routerLink]="['../../locaties/reviews/reviewdelete', review.id]">Delete</a></td>
   </tr>
 </table>

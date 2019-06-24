@@ -27,6 +27,7 @@ export class LocatieupdateComponent implements OnInit {
     this.id = parseInt(  this.route.snapshot.paramMap.get('ids') );
     this.sportService.retrieveAll().subscribe(sport  => {
       this.sporten = sport;
+    this.locatieService.retrieveById(this.id).subscribe(locatie => {this.locatie = locatie})
   })}
 
   verwijderen() {

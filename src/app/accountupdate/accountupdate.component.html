@@ -1,3 +1,48 @@
 <p>
-  accountupdate works!
-</p>
+   Update hier uw account:
+  </p>
+  
+  <form #formulier="ngForm" (ngSubmit)="versturen(formulier)">
+  
+    <br>E-mail:<br>
+    <input [(ngModel)]="oldemail"
+        name="email" required>
+  
+        <br><br>Gebruikersnaam:<br>
+      <input [(ngModel)]="account.naam"
+        name="Gebruikersnaam" required>
+  
+    <br><br>Oud Wachtwoord:
+    <br>
+    <input type="password"  [(ngModel)]="account.wachtwoord"
+        name="wachtwoord" required>
+
+    <br><br>Nieuw Wachtwoord:<br>
+    <input type="password"  [(ngModel)]="nieuwWW"
+        name="wachtwoord">
+  
+    <br><br>Herhaal het wachtwoord:<br>
+    <input type="password"  [(ngModel)]="wachtwoordcheck"
+        name="wachtwoord2">
+  
+        <br><br>Woonplaats:<br>
+        <input [(ngModel)]="account.woonplaats"
+        name="Woonplaats" required>
+  
+        <br><p style="color:red;">{{wwerror}}</p>
+
+        <br><br>Sport:<br>
+  
+        <br><select name="sport" [(ngModel)] = "account.sport.id">
+          <option *ngFor="let s of this.sporten" value={{s.id}}>
+          {{s.naam}}
+          </option>
+          </select>
+    
+  
+  
+    <br><br><input type="submit" value="Update"
+        [disabled]="formulier.invalid">
+  </form>
+  
+  <router-outlet></router-outlet>
